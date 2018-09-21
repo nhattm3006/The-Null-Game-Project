@@ -6,5 +6,6 @@ public class Program {
         gameWindow.mainLoop();
 
         // Thang Ha pha vkl !!!
+        //con cặc!
     }
 }
