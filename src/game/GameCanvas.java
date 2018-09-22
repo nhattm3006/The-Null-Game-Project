@@ -1,6 +1,7 @@
 package game;
 
 import bases.GameObject;
+import players.Enemy;
 import players.Player;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ public class GameCanvas extends JPanel {
     Player player;
     Platform ground1;
     Platform ground2;
+    Enemy enemy;
 
     BufferedImage backBuffer;
     Graphics backBufferGraphics;
@@ -32,6 +34,9 @@ public class GameCanvas extends JPanel {
 
         player = new Player(300, 550);
         GameObject.add(player);
+
+        enemy = new Enemy(800, 335);
+        GameObject.add(enemy);
 
         backBuffer = new BufferedImage(SCREEN_WIDTH,SCREEN_HEIGTH,BufferedImage.TYPE_INT_ARGB);
         backBufferGraphics = backBuffer.getGraphics();

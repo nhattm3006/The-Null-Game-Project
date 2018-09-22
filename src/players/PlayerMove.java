@@ -10,7 +10,7 @@ import inputs.InputManager;
 public class PlayerMove {
     public Vector2D velocity;
     private final float GRAVITY = 0.4f;
-    private final float JUMP_SPEED = 10f;
+    private final float JUMP_SPEED = 15f;
 
     public PlayerMove() {
         velocity = new Vector2D();
@@ -52,7 +52,7 @@ public class PlayerMove {
     }
 
     private void updateHorizontalPhysics(Vector2D position, BoxCollider boxCollider) {
-        BoxCollider nextBoxCollider = boxCollider.shift(velocity.x, 0);
+        BoxCollider nextBoxCollider = boxCollider.shift(0, velocity.y);
 
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {

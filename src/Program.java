@@ -5,7 +5,5 @@ public class Program {
         GameWindow gameWindow = new GameWindow();
         gameWindow.mainLoop();
 
-        // Thang Ha pha vkl !!!
-        //con cặc!
     }
 }

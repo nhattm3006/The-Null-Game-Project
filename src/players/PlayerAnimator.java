@@ -17,7 +17,8 @@ public class PlayerAnimator extends Renderer {
         leftAnimation = new Animation(10,
                 true,
                         ImageUtil.load("images/player/CharacterRight1.png"),
-                        ImageUtil.load("images/player/CharacterRight1.png"));
+                        ImageUtil.load("images/player/CharacterRight2.png"),
+                        ImageUtil.load("images/player/CharacterRight3.png"));
 
         rightAnimation = new Animation(10,
                 true,
