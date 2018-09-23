@@ -15,12 +15,13 @@ public class EnemyMove extends GameObject {
     }
     public void run(Vector2D position,BoxCollider boxCollider){
         this.velocity.x -= 0.01;
+        this.velocity.y += GRAVITY;
+
         updateVerticalPhysics(position, boxCollider);
         updateHorizontalPhysics(position,boxCollider);
-        this.velocity.y += GRAVITY;
+
         position.addUp(velocity);
         if (position.x < 0) position.x = 0;
-        if (position.y > 800) position.y = Setting.SCREEN_WIDTH;
     }
     private void updateVerticalPhysics(Vector2D position, BoxCollider boxCollider) {
         BoxCollider nextBoxCollider = boxCollider.shift(0, velocity.y);
@@ -53,7 +54,7 @@ public class EnemyMove extends GameObject {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance -= 1;
+                    shiftDistance += 1;
                     position.addUp(1, 0);
                 }
             }

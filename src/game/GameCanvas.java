@@ -29,7 +29,7 @@ public class GameCanvas extends JPanel {
         ground1 = new Platform(1280/2, 650);
         GameObject.add(ground1);
 
-        ground2 = new Platform(1280, 500);
+        ground2 = new Platform(1280, 400);
         GameObject.add(ground2);
 
         player = new Player(300, 550);

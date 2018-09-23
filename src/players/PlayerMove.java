@@ -52,7 +52,7 @@ public class PlayerMove {
     }
 
     private void updateHorizontalPhysics(Vector2D position, BoxCollider boxCollider) {
-        BoxCollider nextBoxCollider = boxCollider.shift(0, velocity.y);
+        BoxCollider nextBoxCollider = boxCollider.shift(velocity.x, 0);
 
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
