@@ -33,17 +33,21 @@ public class PlayerBullet extends GameObject {
 
         if (enemy != null) {
             enemy.getHit();
-            this.getHit();
+            System.out.println("HIT");
+
+//            this.getHit();
             this.destroy();
+
         }
     }
 
-    public void getHit() {
-        this.destroy();
-        BulletExplosion bulletExplosion =
-                new BulletExplosion((int)this.position.x, (int)this.position.y);
-        GameObject.add(bulletExplosion);
-    }
+    /* Xóa hàm này nhé, thừa vcl */
+//    public void getHit() {
+//        this.destroy();
+//        BulletExplosion bulletExplosion =
+//                new BulletExplosion((int)this.position.x, (int)this.position.y);
+//        GameObject.add(bulletExplosion);
+//    }
 
     private void move() {
         this.position.addUp(5, 0);
