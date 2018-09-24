@@ -2,7 +2,6 @@ package players;
 
 import bases.BoxCollider;
 import bases.GameObject;
-import bases.ImageRenderer;
 import enemies.Enemy;
 
 public class PlayerBullet extends GameObject {

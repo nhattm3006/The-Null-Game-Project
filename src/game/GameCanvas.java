@@ -1,7 +1,7 @@
 package game;
 
 import bases.GameObject;
-import players.Enemy;
+import enemies.Enemy;
 import players.Player;
 
 import javax.swing.*;
