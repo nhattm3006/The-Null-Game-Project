@@ -8,6 +8,7 @@ import game.Setting;
 import inputs.InputManager;
 
 public class PlayerMove {
+    public boolean isFaceLeft;
     public Vector2D velocity;
     private final float GRAVITY = 0.4f;
     private final float JUMP_SPEED = 15f;
@@ -43,10 +44,12 @@ public class PlayerMove {
 
     private void moveHorizontal() {
         if (InputManager.instance.rightPressed) {
+            isFaceLeft = false;
             velocity.x += 5;
         }
 
         if (InputManager.instance.leftPressed) {
+            isFaceLeft = true;
             velocity.x -= 5;
         }
     }

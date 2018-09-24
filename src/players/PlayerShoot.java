@@ -14,6 +14,7 @@ public class PlayerShoot {
             Vector2D bulletPosition = player.position.subtract(-40, -10);
 
             PlayerBullet newBullet = GameObject.recycle((int)bulletPosition.x, (int)bulletPosition.y, PlayerBullet.class);
+            newBullet.isFaceLeft = player.isFaceLeft;
 
             shootLock = true;
         }

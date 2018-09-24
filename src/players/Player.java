@@ -9,7 +9,7 @@ import game.Platform;
 public class Player extends GameObject {
     PlayerMove playerMove;
     PlayerShoot playerShoot;
-
+    public boolean isFaceLeft = false;
     private PlayerAnimator playerAnimator;
 
     public Player(int x, int y) {
@@ -29,11 +29,13 @@ public class Player extends GameObject {
     }
 
     private void animate() {
-        this.playerAnimator.selectAnimation(this.playerMove.velocity);
+        this.playerAnimator.selectAnimation();
+        this.playerAnimator.isFaceLeft = this.isFaceLeft;
     }
 
     void move() {
         this.playerMove.run(position, boxCollider);
+        this.isFaceLeft = playerMove.isFaceLeft;
     }
 
     void shoot() {
