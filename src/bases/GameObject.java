@@ -1,9 +1,5 @@
 package bases;
 
-import enemies.Enemy;
-import enemies.EnemyBullet;
-import players.PlayerBullet;
-
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
