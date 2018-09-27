@@ -32,4 +32,8 @@ public class Enemy extends GameObject {
     public void render(Graphics g) {
         super.render(g);
     }
+
+    public void getHit() {
+        this.destroy();
+    }
 }

@@ -2,6 +2,7 @@ package game;
 
 import bases.GameObject;
 import enemies.Enemy;
+import maps.Map;
 import players.Player;
 
 import javax.swing.*;
@@ -27,10 +28,12 @@ public class GameCanvas extends JPanel {
         GameObject.add(background);
 
         ground1 = new Platform(1280/2, 650);
-        GameObject.add(ground1);
+       GameObject.add(ground1);
 
         ground2 = new Platform(1280, 400);
         GameObject.add(ground2);
+        Map map = Map.load("maps/untitled2.json");
+        map.generate();
 
         player = new Player(300, 550);
         GameObject.add(player);
