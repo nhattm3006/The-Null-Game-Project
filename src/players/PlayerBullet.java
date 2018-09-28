@@ -3,6 +3,7 @@ package players;
 import bases.BoxCollider;
 import bases.GameObject;
 import bases.Vector2D;
+import enemies.Enemy;
 
 
 public class PlayerBullet extends GameObject {
@@ -20,7 +21,7 @@ public class PlayerBullet extends GameObject {
     public void run() {
         super.run();
         move();
-//        hitEnemies();
+        hitEnemies();
         deactivateIfNeeded();
     }
 
@@ -30,26 +31,17 @@ public class PlayerBullet extends GameObject {
         }
     }
 
-//    private void hitEnemies() {
-//        Enemy enemy = GameObject.checkCollision(this.boxCollider, Enemy.class);
-//
-//        if (enemy != null) {
-//            enemy.getHit();
-//            System.out.println("HIT");
-//
-////            this.getHit();
-//            this.destroy();
-//
-//        }
-//    }
+    private void hitEnemies() {
+        Enemy enemy = GameObject.checkCollision(this.boxCollider, Enemy.class);
 
-    /* Xóa hàm này nhé, thừa vcl */
-//    public void getHit() {
-//        this.destroy();
-//        BulletExplosion bulletExplosion =
-//                new BulletExplosion((int)this.position.x, (int)this.position.y);
-//        GameObject.add(bulletExplosion);
-//    }
+        if (enemy != null) {
+            enemy.getHit();
+            System.out.println("HIT");
+
+            this.destroy();
+
+        }
+    }
 
     private void move() {
         if (isFaceLeft) {
