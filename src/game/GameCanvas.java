@@ -16,8 +16,8 @@ public class GameCanvas extends JPanel {
     Background background;
 
     Player player;
-    Platform ground1;
-    Platform ground2;
+//    Platform ground1;
+//    Platform ground2;
     Enemy enemy;
 
     BufferedImage backBuffer;
@@ -27,12 +27,12 @@ public class GameCanvas extends JPanel {
         background = new Background(1280/2, 720/2);
         GameObject.add(background);
 
-        ground1 = new Platform(1280/2, 650);
-       GameObject.add(ground1);
-
-        ground2 = new Platform(1280, 400);
-        GameObject.add(ground2);
-        Map map = Map.load("maps/untitled2.json");
+//        ground1 = new Platform(1280/2, 650);
+//       GameObject.add(ground1);
+//
+//        ground2 = new Platform(1280, 400);
+//        GameObject.add(ground2);
+        Map map = Map.load("images/platforms/demo.json");
         map.generate();
 
         player = new Player(300, 550);
@@ -43,6 +43,7 @@ public class GameCanvas extends JPanel {
 
         backBuffer = new BufferedImage(SCREEN_WIDTH,SCREEN_HEIGTH,BufferedImage.TYPE_INT_ARGB);
         backBufferGraphics = backBuffer.getGraphics();
+
     }
 
     @Override

@@ -6,9 +6,9 @@ import game.Platform;
 import java.util.List;
 
 public class Layer {
-    private List<Integer> data;
-    private int width;
-    private int height;
+    List<Integer> data;
+    int width;
+    int height;
 
     @Override
     public String toString() {
@@ -20,12 +20,12 @@ public class Layer {
     }
 
     public void generate() {
-        for(int titleY = 0;titleY < 0 ; titleY ++){
-            for (int titleX = 0;titleX<=width;titleX ++){
+        for(int titleY = 0;titleY < height ; titleY ++){
+            for (int titleX = 0;titleX<width;titleX ++){
                 int mapData = data.get(titleY * width + titleX);
                 if(mapData !=0){
-                    Platform platform = new Platform();
-                    platform.position.set(titleX *32, titleY *32);
+                    Platform platform = new Platform(titleX *32 , titleY *32, 32, 32);
+                    platform.addImage(mapData);
                     GameObject.add(platform);
                 }
             }

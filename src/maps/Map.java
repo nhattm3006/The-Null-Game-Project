@@ -22,6 +22,7 @@ public class Map {
     public static Map load(String url){
         String mapContent = Utils.readTextFile(url);
         Gson gson = new Gson();
+        System.out.println(gson.fromJson(mapContent, Map.class));
         return gson.fromJson(mapContent,Map.class);
     }
 }

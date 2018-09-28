@@ -35,7 +35,7 @@ public class PlayerAnimator extends Renderer {
                 ImageUtil.load("images/player/PlayerRight1.png"),
                 ImageUtil.load("images/player/PlayerRight2.png"),
                 ImageUtil.load("images/player/PlayerRight3.png"));
-        this.currentAnimation = rightAnimation;
+        this.currentAnimation = leftAnimation;
     }
 
     public void render(Graphics g, Vector2D position) {
