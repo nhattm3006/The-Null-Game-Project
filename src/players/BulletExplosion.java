@@ -18,7 +18,7 @@ public class BulletExplosion extends GameObject {
 
     public void run() {
         Animation animation = (Animation)this.renderer;
-        if (animation.finish) {
+        if (animation.finished) {
             this.destroy();
         }
     }
