@@ -9,7 +9,7 @@ public class Animation extends Renderer {
     int imageIndex;
     FrameCounter frameCounter;
     private boolean oneTime;
-    public boolean finish;
+    public boolean finished;
 
     public Animation(Image...imgs) {
         this(10, false, imgs);
@@ -19,7 +19,7 @@ public class Animation extends Renderer {
         this.images = new ArrayList<>();
         this.images.addAll(Arrays.asList(imgs));
         this.oneTime = oneTime;
-        this.finish = false;
+        this.finished = false;
         this.imageIndex = 0;
         this.frameCounter = new FrameCounter(frameDelay);
     }
@@ -33,7 +33,7 @@ public class Animation extends Renderer {
             }
             else {
                 if (this.oneTime) {
-                    this.finish = true;
+                    this.finished = true;
                 }
                 else {
                     this.imageIndex = 0;

@@ -36,5 +36,8 @@ public class Enemy extends GameObject {
 
     public void getHit() {
         this.destroy();
+        EnemyExplosion enemyExplosion = new EnemyExplosion((int)this.position.x, (int)this.position.y);
+        enemyExplosion.run();
+        GameObject.add(enemyExplosion);
     }
 }
