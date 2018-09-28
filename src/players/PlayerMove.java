@@ -60,14 +60,14 @@ public class PlayerMove {
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
             boolean moveContinue = true;
-            float shiftDistance = 1;
+            float shiftDistance = Math.signum(velocity.x);
             while (moveContinue) {
                 if (GameObject.checkCollision(boxCollider.shift(shiftDistance, 0), Platform.class) != null) {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance += 1;
-                    position.addUp(1, 0);
+                    shiftDistance += Math.signum(velocity.x);
+                    position.addUp(Math.signum(velocity.x), 0);
                 }
             }
             velocity.x = 0;
@@ -80,14 +80,14 @@ public class PlayerMove {
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
             boolean moveContinue = true;
-            float shiftDistance = 1;
+            float shiftDistance = Math.signum(velocity.y);
             while (moveContinue) {
                 if (GameObject.checkCollision(boxCollider.shift(0, shiftDistance), Platform.class) != null) {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance += 1;
-                    position.addUp(0, 1);
+                    shiftDistance += Math.signum(velocity.y);
+                    position.addUp(0, Math.signum(velocity.y));
                 }
             }
             velocity.y = 0;
