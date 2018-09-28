@@ -7,7 +7,7 @@ import bases.ImageUtil;
 public class PlayerExplosion extends GameObject {
     public PlayerExplosion(int x, int y) {
         super(x, y);
-        this.renderer = new Animation(4, true,
+        this.renderer = new Animation(4, false,
                 ImageUtil.load("images/player/PlayerDie.png")
         );
     }

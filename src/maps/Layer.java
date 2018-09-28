@@ -23,12 +23,22 @@ public class Layer {
         for(int titleY = 0;titleY < height ; titleY ++){
             for (int titleX = 0;titleX<width;titleX ++){
                 int mapData = data.get(titleY * width + titleX);
-                if(mapData !=0){
+                if (mapData == 1 ^ mapData == 2){
                     Platform platform = new Platform(titleX *32 , titleY *32, 32, 32);
                     platform.addImage(mapData);
                     GameObject.add(platform);
+
+                }
+                else if(mapData == 3){
+                    Spike spike = new Spike(titleX*32, titleY*32, 32, 32);
+                    GameObject.add(spike);
+
                 }
             }
         }
+    }
+
+    public void run(){
+        this.generate();
     }
 }

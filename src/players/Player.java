@@ -5,6 +5,7 @@ import bases.GameObject;
 import bases.ImageRenderer;
 import bases.Vector2D;
 import game.Platform;
+import maps.Spike;
 
 public class Player extends GameObject {
     public PlayerMove playerMove;
@@ -26,6 +27,8 @@ public class Player extends GameObject {
         this.move();
         this.shoot();
         this.animate();
+        this.hitBySpike();
+
     }
 
     private void animate() {
@@ -43,9 +46,18 @@ public class Player extends GameObject {
     }
 
     public void getHit() {
+        this.gameOver();
         PlayerExplosion playerExplosion =
                 new PlayerExplosion((int)this.position.x, (int)this.position.y);
         GameObject.add(playerExplosion);
-        this.gameOver();
+        this.destroy();
+    }
+
+    public void hitBySpike(){
+        Spike spike = GameObject.checkCollision(this.boxCollider, Spike.class);
+        if (spike != null){
+            this.getHit();
+            System.out.println("HIT!!!");
+        }
     }
 }
