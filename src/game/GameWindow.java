@@ -1,11 +1,13 @@
 package game;
 
 import inputs.InputManager;
+import utils.ViewPort;
 
 import javax.swing.*;
 import java.awt.event.*;
 
 public class GameWindow extends JFrame {
+    private ViewPort viewPort;
     GameCanvas canvas;
     public GameWindow() {
         this.addKeyListener(new KeyAdapter() {

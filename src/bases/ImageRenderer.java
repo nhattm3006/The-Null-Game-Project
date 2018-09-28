@@ -3,7 +3,7 @@ package bases;
 import java.awt.*;
 
 public class ImageRenderer extends Renderer {
-    Image image;
+    public Image image;
 
     public ImageRenderer(String url) {
         image = ImageUtil.load(url);

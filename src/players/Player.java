@@ -7,7 +7,7 @@ import bases.Vector2D;
 import game.Platform;
 
 public class Player extends GameObject {
-    PlayerMove playerMove;
+    public PlayerMove playerMove;
     PlayerShoot playerShoot;
     public boolean isFaceLeft = false;
     private PlayerAnimator playerAnimator;

@@ -1,6 +1,8 @@
 package bases;
 
 
+import utils.ViewPort;
+
 import java.awt.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
@@ -30,10 +32,10 @@ public class GameObject {
         newGameObjects.clear();
     }
 
-    public static void renderAll(Graphics g) {
+    public static void renderAll(Graphics g, ViewPort viewPort) {
         for (GameObject gr: gameObjects) {
             if (gr.isActive && !gr.isDead) {
-                gr.render(g);
+                gr.render(g, viewPort);
             }
         }
     }
@@ -107,15 +109,14 @@ public class GameObject {
         }
     }
 
-    public void render(Graphics g) {
+    public void render(Graphics g, ViewPort viewPort) {
         if (this.renderer != null) {
-            this.renderer.render(g, this.position);
+            this.renderer.render(g, viewPort.translate(this.position));
         }
-
         // Hiện boxCollider
-        if (this.boxCollider != null) {
-            boxCollider.render(g);
-        }
+        //if (this.boxCollider != null) {
+           // boxCollider.render(g, viewPort);
+       // }
     }
 
     public void destroy() {

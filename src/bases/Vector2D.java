@@ -1,5 +1,7 @@
 package bases;
 
+import java.util.ArrayList;
+
 public class Vector2D {
     public float x;
     public float y;
@@ -39,7 +41,7 @@ public class Vector2D {
         return this.add(other.x, other.y);
     }
 
-    void subtractBy(float x, float y) {
+    public void subtractBy(float x, float y) {
         this.x -= x;
         this.y -= y;
     }
@@ -52,7 +54,7 @@ public class Vector2D {
         return new Vector2D(this.x - x, this.y - y);
     }
 
-    Vector2D subtract(Vector2D other) {
+    public Vector2D subtract(Vector2D other) {
         return this.subtract(other.x, other.y);
     }
 

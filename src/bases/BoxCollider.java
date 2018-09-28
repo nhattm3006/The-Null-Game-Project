@@ -1,6 +1,7 @@
 package bases;
 
-import javax.swing.*;
+import utils.ViewPort;
+
 import java.awt.*;
 
 public class BoxCollider extends GameObject {
@@ -59,7 +60,7 @@ public class BoxCollider extends GameObject {
     }
 
     @Override
-    public void render(Graphics g) {
+    public void render(Graphics g, ViewPort viewPort) {
         g.drawRect((int)this.left(), (int)this.top(), this.width, this.height);
     }
 }

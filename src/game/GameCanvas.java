@@ -4,6 +4,7 @@ import bases.GameObject;
 import enemies.Enemy;
 import maps.Map;
 import players.Player;
+import utils.ViewPort;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,7 @@ import static game.Setting.SCREEN_HEIGTH;
 import static game.Setting.SCREEN_WIDTH;
 
 public class GameCanvas extends JPanel {
+    private ViewPort viewPort;
     Background background;
 
     Player player;
@@ -35,7 +37,7 @@ public class GameCanvas extends JPanel {
         Map map = Map.load("images/platforms/demo.json");
         map.generate();
 
-        player = new Player(300, 550);
+        player = new Player(20, 250);
         GameObject.add(player);
 
         enemy = new Enemy(800, 335);
@@ -43,21 +45,24 @@ public class GameCanvas extends JPanel {
 
         backBuffer = new BufferedImage(SCREEN_WIDTH,SCREEN_HEIGTH,BufferedImage.TYPE_INT_ARGB);
         backBufferGraphics = backBuffer.getGraphics();
-
+        this.viewPort = new ViewPort();
+        this.viewPort.getFollowOffset().set(-Setting.SCREEN_WIDTH/2,-Setting.SCREEN_HEIGTH/2);
     }
 
     @Override
     public void paint(Graphics graphics) {
-        graphics.drawImage(backBuffer,0,0,null);
+        Graphics2D g2d = (Graphics2D) graphics;
+        g2d.drawImage(backBuffer,0,0,null);
     }
 
     void run() {
+        viewPort.follow(player);
+        background.velocity.set(player.playerMove.velocity);
         GameObject.runAll();
     }
 
     void render() {
-        GameObject.renderAll(backBufferGraphics);
-
+        GameObject.renderAll(backBufferGraphics,viewPort);
         this.repaint();
     }
 }

@@ -26,7 +26,7 @@ public class PlayerBullet extends GameObject {
     }
 
     private void deactivateIfNeeded() {
-        if (this.position.x > 1280) {
+        if (this.position.x > 10000) {
             this.isActive = false;
         }
     }
