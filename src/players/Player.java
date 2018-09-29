@@ -6,6 +6,7 @@ import bases.ImageRenderer;
 import bases.Vector2D;
 import game.Platform;
 import maps.Spike;
+import players.scenes.GameOverScene;
 
 public class Player extends GameObject {
     public PlayerMove playerMove;
@@ -51,6 +52,9 @@ public class Player extends GameObject {
                 new PlayerExplosion((int)this.position.x, (int)this.position.y);
         GameObject.add(playerExplosion);
         this.destroy();
+        GameOverScene startOver = new GameOverScene();
+        startOver.init();
+
     }
 
     public void hitBySpike(){

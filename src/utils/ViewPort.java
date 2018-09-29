@@ -14,7 +14,7 @@ public class ViewPort  {
         followOffset = new Vector2D();
     }
     public void follow(GameObject gameObject){
-        position = gameObject.position.add(followOffset);
+        this.position = gameObject.position.add(followOffset);
     }
 
     public Vector2D translate(Vector2D screenPosition){

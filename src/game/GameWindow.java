@@ -1,6 +1,7 @@
 package game;
 
 import inputs.InputManager;
+import utils.Audio;
 import utils.ViewPort;
 
 import javax.swing.*;
@@ -36,6 +37,10 @@ public class GameWindow extends JFrame {
         canvas = new GameCanvas();
         this.setContentPane(canvas);
         this.setVisible(true);
+        Audio.loadSound("images/audio/MarioNhacChuong-V.A-2717632.mp3");
+        Audio.initialize();
+        Audio.playMedia("images/audio/MarioNhacChuong-V.A-2717632.mp3");
+        Audio.play(null);
     }
 
     public void mainLoop() {

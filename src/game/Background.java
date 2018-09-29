@@ -10,7 +10,7 @@ import java.awt.*;
 public class Background extends GameObject {
     ImageRenderer renderer;
     public Vector2D velocity;
-    Background(int x, int y) {
+    public Background(int x, int y) {
         super(x, y);
         this.position  = new Vector2D();
         velocity = new Vector2D();

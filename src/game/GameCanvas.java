@@ -2,10 +2,14 @@ package game;
 
 import bases.GameObject;
 import enemies.Enemy;
+import javafx.scene.media.MediaPlayer;
 import maps.Map;
 import players.Player;
+import players.scenes.GamePlayScene;
+import utils.Audio;
 import utils.ViewPort;
 
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -21,19 +25,21 @@ public class GameCanvas extends JPanel {
 //    Platform ground1;
 //    Platform ground2;
     Enemy enemy;
+    Audio audio;
 
     BufferedImage backBuffer;
     Graphics backBufferGraphics;
 
     public GameCanvas() {
+
+
+
+
+
         background = new Background(1280/2, 720/2);
         GameObject.add(background);
 
-//        ground1 = new Platform(1280/2, 650);
-//       GameObject.add(ground1);
-//
-//        ground2 = new Platform(1280, 400);
-//        GameObject.add(ground2);
+
         Map map = Map.load("images/platforms/demo.json");
         map.generate();
 

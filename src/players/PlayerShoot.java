@@ -4,6 +4,7 @@ import bases.FrameCounter;
 import bases.GameObject;
 import bases.Vector2D;
 import inputs.InputManager;
+import utils.Audio;
 
 public class PlayerShoot {
     private boolean shootLock;
