@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="100bba2b-5275-4ac2-90a1-b5bf37091e1a" name="Default Changelist" comment="Đã thêm playerDie + thêm map di chuyển full !!!">
+    <list default="true" id="100bba2b-5275-4ac2-90a1-b5bf37091e1a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/enemies/Enemy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/enemies/Enemy.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/Background.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/Background.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameCanvas.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameCanvas.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/GameWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/Platform.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/game/Platform.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/BulletExplosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/BulletExplosion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/Player.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerExplosion.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerExplosion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerMove.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerMove.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerShoot.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/The-Null-Game-Project/players/PlayerShoot.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/Background.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/Background.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameCanvas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameCanvas.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/game/GameWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/game/GameWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/PlayerMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/PlayerMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/players/PlayerShoot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/players/PlayerShoot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/ViewPort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/ViewPort.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -129,7 +110,7 @@
     <session id="-950308038">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.1987" value="1" />
           <entry key="project.opened" value="2" />
@@ -154,14 +135,14 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="1903" />
-          <entry key="txt" value="71" />
+          <entry key="java" value="3957" />
+          <entry key="txt" value="115" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1903" />
-          <entry key="PLAIN_TEXT" value="71" />
+          <entry key="JAVA" value="3957" />
+          <entry key="PLAIN_TEXT" value="115" />
         </counts>
       </usages-collector>
     </session>
@@ -185,8 +166,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/players/scenes/GameOverScene.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+            <state relative-caret-position="438">
+              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -351,6 +332,61 @@
               <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="bases" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="enemies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="inputs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="maps" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="players" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="scenes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="The-Null-Game-Project2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="The-Null-Game-Project2" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -485,12 +521,18 @@
       <option name="project" value="LOCAL" />
       <updated>1538164337217</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="xong Scene + audio gameover">
+      <created>1538183988316</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1538183988316</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21709532" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -561,7 +603,8 @@
     <MESSAGE value="Đã render xong map" />
     <MESSAGE value="add Map done" />
     <MESSAGE value="Đã thêm playerDie + thêm map di chuyển full !!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Đã thêm playerDie + thêm map di chuyển full !!!" />
+    <MESSAGE value="xong Scene + audio gameover" />
+    <option name="LAST_COMMIT_MESSAGE" value="xong Scene + audio gameover" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -782,6 +825,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="317">
           <caret line="20" column="40" lean-forward="true" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#363#364#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+            <element signature="e#550#551#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -807,6 +857,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-286">
           <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#399#400#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -863,8 +917,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/players/scenes/GameOverScene.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        <state relative-caret-position="438">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
