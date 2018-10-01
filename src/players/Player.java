@@ -4,9 +4,13 @@ import bases.BoxCollider;
 import bases.GameObject;
 import bases.ImageRenderer;
 import bases.Vector2D;
+import enemies.Enemy;
 import game.Platform;
+import maps.Hotel;
 import maps.Spike;
 import players.scenes.GameOverScene;
+import players.scenes.WinScene;
+import scenes.SceneManager;
 
 public class Player extends GameObject {
     public PlayerMove playerMove;
@@ -29,6 +33,8 @@ public class Player extends GameObject {
         this.shoot();
         this.animate();
         this.hitBySpike();
+        this.hitByEnemy();
+        this.win();
 
     }
 
@@ -52,8 +58,7 @@ public class Player extends GameObject {
                 new PlayerExplosion((int)this.position.x, (int)this.position.y);
         GameObject.add(playerExplosion);
         this.destroy();
-        GameOverScene startOver = new GameOverScene();
-        startOver.init();
+
 
     }
 
@@ -62,6 +67,21 @@ public class Player extends GameObject {
         if (spike != null){
             this.getHit();
             System.out.println("HIT!!!");
+        }
+    }
+
+    public void hitByEnemy(){
+        Enemy enemy = GameObject.checkCollision(this.boxCollider, Enemy.class);
+        if (enemy != null){
+            this.getHit();
+            System.out.println("HIT!!!");
+        }
+    }
+
+    public void win(){
+        Hotel hotel = GameObject.checkCollision(this.boxCollider, Hotel.class);
+        if (hotel != null){
+            SceneManager.changeScene(new WinScene());
         }
     }
 }

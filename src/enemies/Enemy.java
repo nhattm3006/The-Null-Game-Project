@@ -8,12 +8,11 @@ import java.awt.*;
 public class Enemy extends GameObject {
 
     EnemyMove enemyMove;
+    EnemyAnimator enemyAnimator;
     public Enemy(int x, int y){
         super(x,y);
-        renderer = new Animation(
-                ImageUtil.load("images/enemy/Enemyleft1.png"),
-                ImageUtil.load("images/enemy/Enemyleft2.png")
-        );
+        this.enemyAnimator = new EnemyAnimator();
+        renderer = this.enemyAnimator;
         enemyMove = new EnemyMove();
         boxCollider = new BoxCollider(30,30);
     }
@@ -22,17 +21,17 @@ public class Enemy extends GameObject {
     public void run() {
         super.run();
         this.move();
+        this.animate();
     }
 
     private void move() {
         this.enemyMove.run(position,boxCollider);
     }
 
+    public void animate(){
+        this.enemyAnimator.selectAnimation(this.enemyMove.velocity);
+}
 
-    @Override
-    public void render(Graphics g, ViewPort viewPort) {
-        super.render(g, viewPort);
-    }
 
     public void getHit() {
         this.destroy();

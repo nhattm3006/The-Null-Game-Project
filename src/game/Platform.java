@@ -22,14 +22,14 @@ public class Platform extends GameObject {
     // add platforms
     public void addImage(int dataImg){
         switch (dataImg){
-            case 1: {
-                isType = 1;
+            case 2: {
+                isType = 2;
                 this.renderer = new ImageRenderer("images/platforms/grass.png");
                 break;
             }
 
-            case 2: {
-                isType = 2;
+            case 1: {
+                isType = 1;
                 this.renderer = new ImageRenderer( "images/platforms/platform.png");
                 break;
             }
@@ -38,6 +38,18 @@ public class Platform extends GameObject {
                 isType =3;
                 this.renderer = new ImageRenderer("images/platforms/spkie.png");
                 break;
+            }
+            case 4: {
+                isType = 4;
+                this.renderer = new ImageRenderer("images/platforms/hotel.png");
+            }
+            case 5:{
+                isType = 5;
+                this.renderer = new ImageRenderer("images/platforms/Bang.png");
+            }
+            case 6:{
+                isType = 6;
+                this.renderer = new ImageRenderer("images/platforms/Bang2.png");
             }
         }
     }

@@ -1,7 +1,6 @@
 package players.scenes;
 
 import bases.GameObject;
-import bases.ImageRenderer;
 import game.Background;
 import inputs.InputManager;
 import scenes.SceneManager;
@@ -9,7 +8,7 @@ import scenes.Scenes;
 import utils.Audio;
 import utils.ViewPort;
 
-public class GameOverScene implements Scenes {
+public class WinScene implements Scenes {
     @Override
     public void deinit() {
         GameObject.clearAll();
@@ -18,10 +17,10 @@ public class GameOverScene implements Scenes {
 
     @Override
     public void init() {
-        Background background = new Background(1280/2,720/2, "images/background/GameOver.png");
+        Background background = new Background(1280/2,720/2, "images/background/win.png");
         GameObject.add(background);
-        Audio.loadSound("images/audio/K.O - SOUND EFFECT -.mp3");
-        Audio.playMedia("images/audio/K.O - SOUND EFFECT -.mp3");
+        Audio.loadSound("images/audio/iRingtones.net Ddu-Du Ddu-Du Ringtone - Android ringtones.mp3");
+        Audio.playMedia("images/audio/iRingtones.net Ddu-Du Ddu-Du Ringtone - Android ringtones.mp3");
         Audio.initialize();
 
 

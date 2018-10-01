@@ -29,12 +29,18 @@ public class Layer {
                     GameObject.add(platform);
 
                 }
-                else if(mapData == 3){
-                    Spike spike = new Spike(titleX*32, titleY*32, 32, 32);
+                else if(mapData == 3) {
+                    Spike spike = new Spike(titleX * 32, titleY * 32, 32, 32);
                     GameObject.add(spike);
-
+                }else if(mapData == 4) {
+                    Hotel hotel = new Hotel(titleX * 32, titleY * 32, 32 * 8, 32 * 7);
+                    GameObject.add(hotel);
                 }
-            }
+                else if (mapData==5){
+                    Bang bang = new Bang(titleX * 32, titleY * 32, 369, 129);
+                    GameObject.add(bang);
+
+            }}
         }
     }
 

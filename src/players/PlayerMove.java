@@ -6,6 +6,9 @@ import bases.Vector2D;
 import game.Platform;
 import game.Setting;
 import inputs.InputManager;
+import players.scenes.WinScene;
+import scenes.SceneManager;
+import utils.Audio;
 
 public class PlayerMove {
     public boolean isFaceLeft;
@@ -30,6 +33,9 @@ public class PlayerMove {
 
         if (position.x < 0) position.x = 0;
         if (position.y > 800) position.y = Setting.SCREEN_WIDTH;
+        if(position.x ==8000 && position.y == 576){
+            SceneManager.changeScene(new WinScene());
+        }
     }
 
     private void jump(BoxCollider boxCollider) {
@@ -38,6 +44,9 @@ public class PlayerMove {
             if (GameObject.checkCollision(boxColliderAtBottom, Platform.class) != null) {
 
                 velocity.y = -JUMP_SPEED;
+                Audio.loadSound("images/audio/Mario-jump-sound.mp3");
+                Audio.playMedia("images/audio/Mario-jump-sound.mp3");
+                Audio.initialize();
             }
         }
     }
@@ -60,14 +69,14 @@ public class PlayerMove {
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
             boolean moveContinue = true;
-            float shiftDistance = 1;
+            float shiftDistance = Math.signum(velocity.x);
             while (moveContinue) {
                 if (GameObject.checkCollision(boxCollider.shift(shiftDistance, 0), Platform.class) != null) {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance += 1;
-                    position.addUp(1, 0);
+                    shiftDistance += Math.signum(velocity.x);
+                    position.addUp(Math.signum(velocity.x), 0);
                 }
             }
             velocity.x = 0;
@@ -80,14 +89,14 @@ public class PlayerMove {
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
             boolean moveContinue = true;
-            float shiftDistance = 1;
+            float shiftDistance = Math.signum(velocity.y);
             while (moveContinue) {
                 if (GameObject.checkCollision(boxCollider.shift(0, shiftDistance), Platform.class) != null) {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance += 1;
-                    position.addUp(0, 1);
+                    shiftDistance += Math.signum(velocity.y);
+                    position.addUp(0, Math.signum(velocity.y));
                 }
             }
             velocity.y = 0;

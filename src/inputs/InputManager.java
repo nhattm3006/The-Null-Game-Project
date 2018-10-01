@@ -1,7 +1,7 @@
 package inputs;
 
 import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
+import java.security.Key;
 
 public class InputManager {
     public boolean rightPressed = false;
@@ -9,7 +9,8 @@ public class InputManager {
     public boolean upPressed = false;
     public boolean downPressed = false;
     public boolean xPressed = false;
-
+    public boolean startAgain= false;
+    public boolean exit = false;
     public static InputManager instance = new InputManager();
 
     public void keyPressed(KeyEvent e) {
@@ -28,6 +29,12 @@ public class InputManager {
         else if (e.getKeyCode() == KeyEvent.VK_X) {
             xPressed = true;
         }
+        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+            startAgain=true;
+        }
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            exit = true;
+        }
     }
 
     public void keyReleased(KeyEvent e) {
@@ -45,6 +52,12 @@ public class InputManager {
         }
         else if (e.getKeyCode() == KeyEvent.VK_X) {
             xPressed = false;
+        }
+        if(e.getKeyCode()==KeyEvent.VK_ENTER){
+            startAgain=false;
+        }
+        if(e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            exit = false;
         }
     }
 }

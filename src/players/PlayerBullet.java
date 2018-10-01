@@ -45,10 +45,10 @@ public class PlayerBullet extends GameObject {
 
     private void move() {
         if (isFaceLeft) {
-            this.position.addUp(-5, 0);
+            this.position.addUp(-10, 0);
         }
         else {
-            this.position.addUp(5, 0);
+            this.position.addUp(10, 0);
         }
     }
 }

@@ -12,6 +12,9 @@ public class PlayerShoot {
 
     void run(Player player) {
         if (InputManager.instance.xPressed && !shootLock) {
+            Audio.loadSound("images/audio/knife-throw-sound-effect-051395302_prev.m4a");
+            Audio.playMedia("images/audio/knife-throw-sound-effect-051395302_prev.m4a");
+            Audio.initialize();
             Vector2D bulletPosition = player.position.subtract(-40, -10);
 
             PlayerBullet newBullet = GameObject.recycle((int)bulletPosition.x, (int)bulletPosition.y, PlayerBullet.class);

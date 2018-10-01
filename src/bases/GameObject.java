@@ -31,11 +31,15 @@ public class GameObject {
         gameObjects.addAll(newGameObjects);
         newGameObjects.clear();
     }
+    public static void clearAll() {
+        gameObjects.clear();
+        newGameObjects.clear();
+    }
 
-    public static void renderAll(Graphics g, ViewPort viewPort) {
-        for (GameObject gr: gameObjects) {
-            if (gr.isActive && !gr.isDead) {
-                gr.render(g, viewPort);
+    public static void renderAll(Graphics backBufferGraphic,ViewPort viewPort) {
+        for(GameObject go: gameObjects){
+            if(go.isActive){
+                go.render(backBufferGraphic,viewPort);
             }
         }
     }
@@ -109,9 +113,9 @@ public class GameObject {
         }
     }
 
-    public void render(Graphics g, ViewPort viewPort) {
-        if (this.renderer != null) {
-            this.renderer.render(g, viewPort.translate(this.position));
+    public void render(Graphics g, ViewPort viewPort){
+        if(this.renderer != null){
+            this.renderer.render(g,viewPort.translate(this.position));
         }
         // Hiện boxCollider
         //if (this.boxCollider != null) {

@@ -10,11 +10,11 @@ import java.awt.*;
 public class Background extends GameObject {
     ImageRenderer renderer;
     public Vector2D velocity;
-    public Background(int x, int y) {
+    public Background(int x, int y, String url) {
         super(x, y);
         this.position  = new Vector2D();
         velocity = new Vector2D();
-        this.renderer = new ImageRenderer("images/background/maxresdefault.jpg");
+        this.renderer = new ImageRenderer(url);
     }
 
     @Override
@@ -22,6 +22,9 @@ public class Background extends GameObject {
         g.drawImage(this.renderer.image, (int) position.x,(int) position.y, null);
         g.drawImage(this.renderer.image, (int) position.x + 1280,(int) position.y, null);
         g.drawImage(this.renderer.image, (int) position.x - 1280,(int) position.y, null);
+    }
+    public void render(Graphics g){
+        g.drawImage(this.renderer.image,0,0,null);
     }
 
     @Override
