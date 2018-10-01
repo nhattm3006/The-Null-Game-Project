@@ -2,7 +2,6 @@ package players.scenes;
 
 import bases.GameObject;
 import bases.ImageRenderer;
-import game.Background;
 import scenes.Scenes;
 
 public class GameOverScene implements Scenes {

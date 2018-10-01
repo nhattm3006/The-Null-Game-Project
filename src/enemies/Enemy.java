@@ -8,12 +8,13 @@ import java.awt.*;
 public class Enemy extends GameObject {
 
     EnemyMove enemyMove;
+    private EnemyAnimator enemyAnimator;
+    public boolean isLeft;
+
     public Enemy(int x, int y){
         super(x,y);
-        renderer = new Animation(
-                ImageUtil.load("images/enemy/Enemyleft1.png"),
-                ImageUtil.load("images/enemy/Enemyleft2.png")
-        );
+        this.enemyAnimator = new EnemyAnimator();
+        renderer = this.enemyAnimator;
         enemyMove = new EnemyMove();
         boxCollider = new BoxCollider(30,30);
     }
@@ -22,10 +23,17 @@ public class Enemy extends GameObject {
     public void run() {
         super.run();
         this.move();
+//        this.animate();
     }
 
     private void move() {
         this.enemyMove.run(position,boxCollider);
+//        this.isLeft = EnemyMove.moveLeft;
+    }
+
+    public void animate(){
+        this.enemyAnimator.selectAnimation();
+        this.enemyAnimator.isLeft = this.isLeft;
     }
 
 

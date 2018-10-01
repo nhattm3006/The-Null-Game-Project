@@ -2,14 +2,11 @@ package game;
 
 import bases.GameObject;
 import enemies.Enemy;
-import javafx.scene.media.MediaPlayer;
 import maps.Map;
 import players.Player;
-import players.scenes.GamePlayScene;
 import utils.Audio;
 import utils.ViewPort;
 
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -22,8 +19,7 @@ public class GameCanvas extends JPanel {
     Background background;
 
     Player player;
-//    Platform ground1;
-//    Platform ground2;
+
     Enemy enemy;
     Audio audio;
 

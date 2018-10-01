@@ -9,6 +9,8 @@ import game.Setting;
 public class EnemyMove extends GameObject {
     public Vector2D velocity;
     private final float GRAVITY = 0.4f;
+    public static boolean moveLeft;
+
     EnemyMove() {
         velocity = new Vector2D();
         boxCollider = new BoxCollider(30, 30);
@@ -48,17 +50,17 @@ public class EnemyMove extends GameObject {
         Platform platform = GameObject.checkCollision(nextBoxCollider, Platform.class);
         if (platform != null) {
             boolean moveContinue = true;
-            float shiftDistance = 1;
+            float shiftDistance = Math.signum(velocity.x);
             while (moveContinue) {
                 if (GameObject.checkCollision(boxCollider.shift(shiftDistance, 0), Platform.class) != null) {
                     moveContinue = false;
                 }
                 else {
-                    shiftDistance += 1;
-                    position.addUp(1, 0);
+                    shiftDistance += Math.signum(velocity.x);
+                    position.addUp(Math.signum(velocity.x), 0);
                 }
             }
-            velocity.y = 0;
+            velocity.x = 0;
         }
     }
 
