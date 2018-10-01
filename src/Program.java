@@ -1,7 +1,4 @@
-import com.google.gson.Gson;
 import game.GameWindow;
-import maps.Map;
-import utils.Utils;
 
 public class Program {
     public static void main(String[] args) {

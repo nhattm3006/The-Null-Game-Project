@@ -1,8 +1,6 @@
 package game;
 
 import inputs.InputManager;
-import players.scenes.SceneMenu;
-import scenes.SceneManager;
 import utils.Audio;
 import utils.ViewPort;
 
@@ -36,10 +34,12 @@ public class GameWindow extends JFrame {
         this.setResizable(false);
         this.setTitle("Cong Chua Danh Ghen");
 
-
         canvas = new GameCanvas();
         this.setContentPane(canvas);
         this.setVisible(true);
+        Audio.initialize();
+        Audio.playMedia("images/audio/MarioNhacChuong-V.A-2717632.mp3");
+        Audio.play(null);
     }
 
     public void mainLoop() {

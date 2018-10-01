@@ -9,7 +9,7 @@ import java.awt.*;
 
 public class EnemyAnimator extends Renderer {
 
-    public boolean faceLeft;
+    public boolean isLeft;
     private Animation currentAnimation;
     private Animation leftAnimation;
     private Animation rightAnimation;
@@ -30,14 +30,13 @@ public class EnemyAnimator extends Renderer {
         this.currentAnimation.render(g, position);
     }
 
-    void selectAnimation(Vector2D velocity) {
-        if (faceLeft && velocity.x < 0) {
-            this.currentAnimation = this.leftAnimation;
+    void selectAnimation() {
+        if (isLeft && EnemyMove.moveLeft) {
+                this.currentAnimation = this.leftAnimation;
         }
-        if (!faceLeft && velocity.x > 0){
+        else{
             this.currentAnimation = this.rightAnimation;
 
         }
     }
 }
-

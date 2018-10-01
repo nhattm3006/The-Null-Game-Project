@@ -8,7 +8,9 @@ import java.awt.*;
 public class Enemy extends GameObject {
 
     EnemyMove enemyMove;
-    EnemyAnimator enemyAnimator;
+    private EnemyAnimator enemyAnimator;
+    public boolean isLeft;
+
     public Enemy(int x, int y){
         super(x,y);
         this.enemyAnimator = new EnemyAnimator();
@@ -21,17 +23,24 @@ public class Enemy extends GameObject {
     public void run() {
         super.run();
         this.move();
-        this.animate();
+//        this.animate();
     }
 
     private void move() {
         this.enemyMove.run(position,boxCollider);
+//        this.isLeft = EnemyMove.moveLeft;
     }
 
     public void animate(){
-        this.enemyAnimator.selectAnimation(this.enemyMove.velocity);
-}
+        this.enemyAnimator.selectAnimation();
+        this.enemyAnimator.isLeft = this.isLeft;
+    }
 
+
+    @Override
+    public void render(Graphics g, ViewPort viewPort) {
+        super.render(g, viewPort);
+    }
 
     public void getHit() {
         this.destroy();

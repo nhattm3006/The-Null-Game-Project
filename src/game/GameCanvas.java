@@ -1,9 +1,11 @@
 package game;
 
 import bases.GameObject;
-import players.scenes.SceneMenu;
-import scenes.SceneManager;
+import enemies.Enemy;
+import maps.Map;
+import players.Player;
 import utils.Audio;
+import utils.ViewPort;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,31 +15,56 @@ import static game.Setting.SCREEN_HEIGTH;
 import static game.Setting.SCREEN_WIDTH;
 
 public class GameCanvas extends JPanel {
+    private ViewPort viewPort;
+    Background background;
+
+    Player player;
+
+    Enemy enemy;
+    Audio audio;
+
     BufferedImage backBuffer;
     Graphics backBufferGraphics;
 
     public GameCanvas() {
-        SceneManager.changeScene(new SceneMenu());
-        backBuffer = new BufferedImage(SCREEN_WIDTH, SCREEN_HEIGTH, BufferedImage.TYPE_INT_ARGB);
+
+
+
+
+
+        background = new Background(1280/2, 720/2);
+        GameObject.add(background);
+
+
+        Map map = Map.load("images/platforms/demo.json");
+        map.generate();
+
+        player = new Player(20, 250);
+        GameObject.add(player);
+
+        enemy = new Enemy(800, 335);
+        GameObject.add(enemy);
+
+        backBuffer = new BufferedImage(SCREEN_WIDTH,SCREEN_HEIGTH,BufferedImage.TYPE_INT_ARGB);
         backBufferGraphics = backBuffer.getGraphics();
-        SceneManager.nextScene = new SceneMenu();
+        this.viewPort = new ViewPort();
+        this.viewPort.getFollowOffset().set(-Setting.SCREEN_WIDTH/2,-Setting.SCREEN_HEIGTH/2);
     }
 
     @Override
     public void paint(Graphics graphics) {
-        graphics.drawImage(backBuffer,0,0,null);
+        Graphics2D g2d = (Graphics2D) graphics;
+        g2d.drawImage(backBuffer,0,0,null);
     }
 
     void run() {
+        viewPort.follow(player);
+        background.velocity.set(player.playerMove.velocity);
         GameObject.runAll();
-        SceneManager.changeSceneIfNeeded();
-        SceneManager.currentScene.run();
-        System.out.println(SceneManager.currentScene);
     }
 
     void render() {
-
-        GameObject.renderAll(backBufferGraphics, SceneManager.currentScene.getViewPort());
+        GameObject.renderAll(backBufferGraphics,viewPort);
         this.repaint();
     }
 }
